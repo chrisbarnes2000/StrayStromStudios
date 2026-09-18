@@ -1,0 +1,102 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 1. Default-Deny Catch-All Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // 2. Globally Reusable Primitives
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // 3. Entity-Specific Schema Validation
+    function isValidVettedRequest(data) {
+      return data.keys().hasAll(['email', 'fullName', 'affiliation', 'status', 'linkSent', 'createdAt', 'updatedAt'])
+        && data.keys().size() >= 7 && data.keys().size() <= 8
+        && data.email is string
+        && data.email.size() >= 3
+        && data.email.size() <= 128
+        && data.fullName is string
+        && data.fullName.size() >= 1
+        && data.fullName.size() <= 128
+        && data.affiliation is string
+        && data.affiliation.size() <= 128
+        && (!data.keys().hasAny(['message']) || data.message is string)
+        && (data.status == 'PENDING' || data.status == 'APPROVED' || data.status == 'REJECTED')
+        && data.linkSent is bool;
+    }
+
+    // 4. Match Block for Vetted Requests
+    match /vetted_requests/{requestId} {
+      allow get: if isValidId(requestId) && (
+        !isSignedIn() || 
+        (isSignedIn() && (
+          // Own request check or admin
+          resource.data.email == request.auth.token.email ||
+          exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+        ))
+      );
+
+      allow list: if isSignedIn() && (
+        resource.data.email == request.auth.token.email ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+
+      // On creation: force PENDING status, no link pre-sent, matching request time
+      allow create: if isValidId(requestId) 
+        && isValidVettedRequest(incoming())
+        && incoming().status == 'PENDING'
+        && incoming().linkSent == false
+        && incoming().createdAt == request.time
+        && incoming().updatedAt == request.time;
+
+      // On update: restrict non-admins from modifying status or linkSent
+      allow update: if isValidId(requestId)
+        && isValidVettedRequest(incoming())
+        && incoming().createdAt == existing().createdAt
+        && incoming().updatedAt == request.time
+        && (
+          // If self-update: cannot change status, or createdAt, but can change linkSent to true
+          (
+            incoming().status == existing().status &&
+            (incoming().linkSent == existing().linkSent || (existing().linkSent == false && incoming().linkSent == true)) &&
+            incoming().email == existing().email &&
+            incoming().diff(existing()).affectedKeys().hasOnly(['fullName', 'affiliation', 'message', 'linkSent', 'updatedAt'])
+          ) ||
+          // Admin override
+          exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+        );
+
+      allow delete: if isValidId(requestId) && (
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    // 5. Match Block for Community Investment Pods & Votes
+    match /pods/{podId} {
+      allow read: if true;
+      allow write: if true; // Allow all users (including guest and authenticated) to collaborate, join pods, add proposals, and vote
+    }
+
+    // Admins Collection (Pre-configured or for administrative roles)
+    match /admins/{adminId} {
+      allow read: if isSignedIn();
+      allow write: if false; // Only manageable via Cloud Console
+    }
+  }
+}

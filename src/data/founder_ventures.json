@@ -1,0 +1,221 @@
+{
+  "founder_ventures": [
+    {
+      "project": "RapportVerse",
+      "founder": "Chris Barnes",
+      "category": "flagship",
+      "dates": "Jun 2025 – Present",
+      "tagline": "A professional networking platform designed to connect mission-driven individuals and organizations through authentic communication patterns.",
+      "role": "Founder & Lead Architect",
+      "mission": "Building community through authentic connection, amplifying diverse voices, and creating opportunities for collaboration without corporate algorithmic distortion.",
+      "technologies": {
+        "frontend": ["React", "TypeScript", "Vite", "Tailwind CSS", "Lucide React"],
+        "backend": ["Node.js", "Express.js"],
+        "database": ["Firebase Firestore", "Firebase Authentication"],
+        "intelligence_engine": ["Gemini API", "Relational Graph Analytics"]
+      },
+      "status": "In active development (2025–Present)",
+      "key_architectural_contributions": [
+        {
+          "feature": "Relational Topology Visualizers",
+          "description": "Visualizing unseen communication patterns and network graphs through thoughtful platform design and supportive analytics."
+        },
+        {
+          "feature": "Zero-Exposure Identity Security",
+          "description": "Architected zero-exposure privacy models ensuring user identity controls and verifiable credentials."
+        },
+        {
+          "feature": "Scalable Backend Graph Store",
+          "description": "Designing scalable backend infrastructure for professional networking graphs and decentralized community trust rings."
+        }
+      ],
+      "architecture_compliance": {
+        "module_separation": "Graph analytics separated into web-worker threads for stutter-free canvas traversal.",
+        "state_persistence": "Attribute-based Firestore security rules enforce client-side confidentiality and zero-knowledge badge sharing."
+      }
+    },
+    {
+      "project": "Ascend ATS",
+      "founder": "Chris Barnes",
+      "category": "flagship",
+      "dates": "2025 – Present",
+      "tagline": "A privacy-first, inclusive applicant tracking system and portfolio engine designed for equitable hiring.",
+      "role": "Founder & Lead Architect",
+      "mission": "Empowering candidates to show their full potential by coupling objective, deterministic skills-matching with absolute identity security and neurodivergent accessibility workflows.",
+      "technologies": {
+        "frontend": ["React", "TypeScript", "Vite", "Tailwind CSS"],
+        "backend": ["Node.js", "Express.js"],
+        "database": ["Firebase Firestore", "Firebase Authentication"],
+        "intelligence_engine": ["Gemini API", "Structured JSON Schema Parsers"]
+      },
+      "status": "In active development (2025–Present)",
+      "key_architectural_contributions": [
+        {
+          "feature": "Inclusive Identity & DEI Workflows",
+          "description": "Custom settings panels letting candidates declare pronouns, preferred names, and request precise testing or interview accommodations (such as screen-reader optimization, transcription, or quiet environments)."
+        },
+        {
+          "feature": "Granular PII Redaction Controls",
+          "description": "A robust, multi-tier privacy system allowing candidates to generate public share links while selectively redacting personally identifiable details from non-owners."
+        },
+        {
+          "feature": "Deterministic Skills Matching",
+          "description": "An automated objective parsing engine that parses unstructured resume data and calculates accurate job matching coefficients."
+        },
+        {
+          "feature": "Instant Background DB Synchronization",
+          "description": "Real-time, debounced database synchronization on switches and input states, eliminating friction and providing an offline-first feeling."
+        }
+      ],
+      "architecture_compliance": {
+        "module_separation": "Highly modular architecture using decoupled panel files (PersonalInfoEditor, DeiAccommodationsEditor, ExperienceEditor) to minimize token footprint and enforce isolation.",
+        "state_persistence": "State is managed with clean React Hooks and instantly persisted to Cloud Firestore documents key-mapped by Firebase Auth user IDs."
+      }
+    },
+    {
+      "project": "Mentra Collective",
+      "founder": "Chris Barnes",
+      "category": "flagship",
+      "dates": "2025 – Present",
+      "tagline": "An educational quantitative modeling terminal and collective fund simulator aligning inclusive advocacy pods with deterministic options analytics.",
+      "role": "Founder & Lead SRE",
+      "mission": "Decoupling complex derivative instruments and Black-Scholes simulators into high-contrast accessible layouts, empowering neurodivergent SRE professionals and mission-driven collective advocates to simulate individual portfolio strategies securely.",
+      "technologies": {
+        "frontend": ["React", "TypeScript", "Vite", "Tailwind CSS", "Recharts", "Lucide React"],
+        "backend": ["Node.js", "Express.js"],
+        "database": ["Firebase Firestore", "Firebase Authentication"],
+        "intelligence_engine": ["Gemini API", "Structured JSON Schema Parsers"]
+      },
+      "status": "In active development (2025–Present)",
+      "key_architectural_contributions": [
+        {
+          "feature": "Decoupled Options Calculations",
+          "description": "Moving high-overhead Black-Scholes metrics and options payoffs calculations to dedicated utility spaces to ensure zero-lag render frames under active telemetry simulation."
+        },
+        {
+          "feature": "Centralized Firebase Firestore Security Rules",
+          "description": "Architecting field-level security checks preventing self-approvals, enforcing rigorous audit log trails with automated timestamps, and centralizing error handlers."
+        },
+        {
+          "feature": "Neurodivergent-Focused Accessibilities",
+          "description": "Enforcing soft-green overlays ('chris-reading-mode') and customizable serif interfaces for cognitive tracking comfort and reading accessibility."
+        },
+        {
+          "feature": "Secure Server Proxy Infrastructure",
+          "description": "Enforcing clean server-side encapsulation of Gemini and external API keys behind Express proxy routes, bypassing CORS limits and protecting sensitive developer keys."
+        }
+      ],
+      "architecture_compliance": {
+        "module_separation": "Tab-based modularized routing separates dynamic option calculations and advocacy settings from core dashboard rendering to maintain a lightweight core bundle.",
+        "state_persistence": "Unified responsive data layouts using robust local React hooks synchronized instantly with non-blocking Firestore document stores."
+      }
+    },
+    {
+      "project": "ODEN Nexus",
+      "founder": "Chris Barnes",
+      "category": "investigative",
+      "dates": "2025 – Present",
+      "tagline": "A unified investigative graph mapping terminal and FOIA workflow suite for journalists, forensic accountants, and public-interest researchers.",
+      "role": "Founder & Lead Architect",
+      "mission": "Transforming fragmented public records, corporate disclosures, and court filings into real-time semantic knowledge graphs to accelerate high-impact accountability journalism.",
+      "technologies": {
+        "frontend": ["React", "TypeScript", "D3-Force", "React-Konva", "Tailwind CSS"],
+        "backend": ["Node.js", "Express.js"],
+        "database": ["Firebase Firestore", "Cloud Storage"],
+        "intelligence_engine": ["Gemini 2.5 Flash", "Semantic NER Extraction"]
+      },
+      "status": "In active development (2025–Present)",
+      "key_architectural_contributions": [
+        {
+          "feature": "GPU-Accelerated Graph Rendering",
+          "description": "Hybrid D3-Force layout engine coupled with React-Konva canvas, enabling seamless 60fps pan/zoom across 10,000+ nodes and edges."
+        },
+        {
+          "feature": "Automated FOIA & Discovery Pipelines",
+          "description": "Structured generation of federal and state public records requests with automated tracking of statutory response deadlines."
+        },
+        {
+          "feature": "Entity Correlation & Timeline Synthesis",
+          "description": "Extracts corporate officers, shell entities, and financial timestamps using structured Gemini JSON schemas to build chronological investigation timelines."
+        }
+      ],
+      "architecture_compliance": {
+        "module_separation": "Canvas physics engine decoupled from document-store listeners, avoiding unnecessary React tree reconciliations.",
+        "state_persistence": "Investigation workspaces stored with immutable audit logs and client-side encryption support."
+      }
+    },
+    {
+      "project": "MiniBarnMaster",
+      "founder": "Chris Barnes",
+      "client": "Aaron Barnes (Eldest Brother)",
+      "category": "climate",
+      "dates": "2024 – Present",
+      "tagline": "Climate-engineered regional shed and geodesic dome planning terminal tailored for Pacific Northwest environmental loads.",
+      "role": "Full-Stack Architect & Lead SRE",
+      "mission": "Bringing aerospace-grade structural reliability calculations and climate modeling into rural and residential construction planning.",
+      "technologies": {
+        "frontend": ["React", "TypeScript", "Vite", "Tailwind CSS", "Canvas 2D"],
+        "backend": ["Node.js", "Express.js"],
+        "database": ["Firebase Firestore", "Local IndexedDB Cache"]
+      },
+      "status": "In production deployment (2024–Present)",
+      "key_architectural_contributions": [
+        {
+          "feature": "Cascade & Olympic Snow-Load Engineering",
+          "description": "Deterministic calculation engine for Western Washington building codes, certifying structures against 50+ lbs/sq ft snow loads and 110mph coastal wind shears."
+        },
+        {
+          "feature": "Geodesic Dome Truss Geometry Parser",
+          "description": "Calculates chord factors, strut lengths, and dihedral angles for 2V, 3V, and 4V domes with automated lumber cut-lists."
+        },
+        {
+          "feature": "Offline-First Field Estimation",
+          "description": "Synchronizes regional lumber pricing and structural blueprints locally, allowing zero-connectivity on-site calculations."
+        }
+      ],
+      "architecture_compliance": {
+        "module_separation": "Truss physics and trigonometric calculations isolated in pure mathematical functions with 100% unit test coverage.",
+        "state_persistence": "Dual-layer persistence with local IndexedDB caches and background Firestore cloud sync."
+      }
+    },
+    {
+      "project": "LifeCreatesArt",
+      "founder": "Chris Barnes",
+      "client": "Tina Croft Barnes (Mother)",
+      "category": "fine-art",
+      "dates": "2024 – Present",
+      "tagline": "Fine art portfolio, provenance archive, and asset protection system with client-side WebAssembly HEIC transcoding.",
+      "role": "Full-Stack Architect & Lead Engineer",
+      "mission": "Empowering independent fine artists with enterprise-grade image optimization, intellectual property watermarking, and resilient cloud cataloging.",
+      "technologies": {
+        "frontend": ["React", "TypeScript", "WebAssembly (heic2any)", "Tailwind CSS"],
+        "backend": ["Node.js", "Express.js"],
+        "database": ["Firebase Firestore", "Firebase Storage"],
+        "media_processing": ["WebAssembly Transcoder", "HTML5 Canvas Compression"]
+      },
+      "status": "In production deployment (2024–Present)",
+      "key_architectural_contributions": [
+        {
+          "feature": "Client-Side HEIC WebAssembly Transcoding",
+          "description": "Converts high-resolution Apple HEIC photos directly in browser memory using WebAssembly, eliminating heavy server compute costs."
+        },
+        {
+          "feature": "Dynamic Lossless Canvas Compression",
+          "description": "Reduces artwork upload payloads by >60% without perceptible loss in color gamut, preserving gallery-grade fidelity."
+        },
+        {
+          "feature": "Intellectual Property & Provenance Shielding",
+          "description": "Automated transparent cryptographic watermarking and context-menu inspection shielding to protect original art assets."
+        },
+        {
+          "feature": "Self-Healing Firestore Catalog Reconciliation",
+          "description": "Verifies metadata consistency between Cloud Storage image blobs and Firestore documents on every catalog write."
+        }
+      ],
+      "architecture_compliance": {
+        "module_separation": "Image processing pipeline runs in offscreen canvas workers to preserve 60fps UI responsiveness during bulk uploads.",
+        "state_persistence": "Artwork provenance records stored with immutable version histories and strict read-only public security rules."
+      }
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+[
+  {
+    "version": "1.8.0",
+    "date": "2026-07-02",
+    "title": "Tab Modularization Phase A Completion",
+    "description": "Completed modularization of VettedPortalTab and RulebookTab, completing phase A tab extraction.",
+    "changes": [
+      "Extracted RulebookTab and VettedPortalTab components from App.tsx",
+      "Delegated all tab-specific state and logic to new components",
+      "Cleaned up App.tsx, significantly reducing its size and complexity"
+    ]
+  },
+  {
+    "version": "1.7.0",
+    "date": "2026-07-02",
+    "title": "Sustainability Index Modularization",
+    "description": "Extracted the Sustainability Index tracker, ESG asset lists, and Collective Power calculator into a dedicated component, cleaning up App.tsx state management.",
+    "changes": [
+      "Decoupled Sustainability Index assets, impact member/monthly sliders, and compounding interest math into SustainabilityTab",
+      "Transferred all sustainability-related local states out of src/App.tsx",
+      "Reduced rendering complexity in App.tsx by removing ~80 lines of inline UI code",
+      "Maintained full feature parity and accessibility compliance"
+    ]
+  },
+  {
+    "version": "1.6.0",
+    "description": "Surgically extracted the Onboarding interactive market simulation tab, including all related states, logic, and transaction history, into a new dedicated component.",
+    "changes": [
+      "Decoupled Onboarding simulation steps, market condition handling, and risk fingerprint calculation logic into OnboardingTab",
+      "Transferred all simulation-related local states out of src/App.tsx, greatly simplifying root component structure",
+      "Eliminated ~200 lines of complex simulation rendering code from App.tsx while maintaining perfect feature parity",
+      "Ensured accessibility and theme compliance in the new modularized Onboarding component",
+      "Optimized modular structure for easier maintenance of simulation scenario datasets"
+    ]
+  },
+  {
+    "date": "2026-07-02",
+    "title": "Options Corner Tab Modularization",
+    "description": "Surgically extracted the Options Corner tab, Black-Scholes calculation logic, SVG payoff payoff-profile drawing, and localized states out of App.tsx into a dedicated standalone component.",
+    "changes": [
+      "Decoupled options inputs, Black-Scholes Greeks computations, and Breakeven price determinations into OptionsCornerTab",
+      "Created an interactive, SRE-grade responsive ResizeObserver for the SVG payoff profile, completely preventing DOM reflow limitations and loops",
+      "Transferred all local Options-related states out of src/App.tsx, lowering root state complexity and rendering loads",
+      "Eliminated ~300 lines of complex visual rendering code from App.tsx while keeping complete visual and math parity",
+      "Guaranteed that all financial metrics and options sliders remain fully compliant with Chris's Dyslexia accessibility overlay preferences"
+    ]
+  },
+  {
+    "version": "1.4.0",
+    "date": "2026-07-02",
+    "title": "AstroNight Modularization & State Delegation",
+    "description": "Successfully refactored and extracted the massive AstroNight Portfolio Mirror, Public Ledger, Personal Journal, and Gemini-based analytics into a clean, modular AstroMirrorTab component.",
+    "changes": [
+      "Extracted monolithic astro-mirror tab layout and logic into a dedicated AstroMirrorTab component",
+      "Delegated selectedHolding, profileViewMode, eli5Result, and newsResult states into local component scope",
+      "Encapsulated Gemini-powered ELI5 explanations and grounded Google Search news sentiment fetching inside the component",
+      "Maintained full support for Christopher Barnes's toggleable Dyslexia overlay theme preferences across the newly modular tab",
+      "Eliminated ~500 lines of redundant visual code from App.tsx while guaranteeing complete feature parity"
+    ]
+  },
+  {
+    "version": "1.3.0",
+    "date": "2026-07-02",
+    "title": "Decoupled Pods & Persistent Telemetry",
+    "description": "Surgically modularized the Investment Pods system into standalone components, fully integrated persistent Firestore cloud synchronization for live proposal voting, and prepared administrative control panels.",
+    "changes": [
+      "Extracted monolithic inline pods logic into a dedicated, clean, and modular PodsTab component",
+      "Created secure Firestore collection synchronization for Investment Pods, proposals, member states, and voting telemetry",
+      "Fixed Details button behavior to enable deep-dive analytical viewing without automatically enrolling users in groups",
+      "Implemented a comprehensive upvote and downvote tracking system synced securely with Firestore",
+      "Formulated structural architecture and data schemas for an upcoming Admin Control Panel dashboard"
+    ]
+  },
+  {
+    "version": "1.2.0",
+    "date": "2026-07-02",
+    "title": "The Bento Grid & Vetted Portal Update",
+    "description": "Refined the entire strategy dashboard with a high-fidelity Bento Grid design system, integrated the SRE portfolio profile, and deployed Firebase cloud storage.",
+    "changes": [
+      "Applied high-contrast slate Bento Grid design theme with sky-blue accents and emerald/rose indicators",
+      "Integrated secure Firebase Firestore backend and Auth credentials flow",
+      "Created Interactive Engineering Profile for Christopher Barnes, featuring his real-world Citi SRE achievements",
+      "Added Dyslexia Reading Preference Mode (soft green canvas and serif typography) inspired by Chris's design preferences",
+      "Implemented a Vetted User Portal allowing verified colleagues to request secure access or password invitation links",
+      "Linked systemic version history with programmatically rendered changelogs"
+    ]
+  },
+  {
+    "version": "1.1.0",
+    "date": "2026-06-15",
+    "title": "Equity Derivatives & Community Pods",
+    "description": "Released advanced options pricing models and collaborative investment clubs.",
+    "changes": [
+      "Built real-time Black-Scholes Options Pricing calculator and visual payoff charts",
+      "Created Community Investment Pods (FIRST Robotics Alumni, LGBTQIA+ ESG, PTK Scholars)",
+      "Implemented proposal submission, detail analytics, and local voting systems",
+      "Deployed automated AI-moderated ESG score evaluation logic via Gemini"
+    ]
+  },
+  {
+    "version": "1.0.0",
+    "date": "2026-05-01",
+    "title": "Prototype Launch",
+    "description": "Initial design and baseline learning features.",
+    "changes": [
+      "Established core holding ledger and strategy rationales mirroring AstroNight's private accounts",
+      "Designed interactive newcomer simulation tutorial",
+      "Formulated base AI-powered ELI5 explanation helper to parse complex derivatives"
+    ]
+  }
+]

@@ -1,0 +1,76 @@
+{
+  "entities": {
+    "vetted_request": {
+      "title": "Vetted User Invitation Request",
+      "description": "Represents an invitation request from an aspiring vetted user to obtain access credentials and password links.",
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "User's primary contact email address."
+        },
+        "fullName": {
+          "type": "string",
+          "description": "Full name of the requester."
+        },
+        "affiliation": {
+          "type": "string",
+          "description": "Professional or community affiliation (e.g., Citi SRE, FIRST Alumni, PTK Scholar)."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["PENDING", "APPROVED", "REJECTED"],
+          "description": "Approval status of the request."
+        },
+        "message": {
+          "type": "string",
+          "description": "Optional statement detailing the reason or background for seeking vetting."
+        },
+        "linkSent": {
+          "type": "boolean",
+          "description": "Indicates whether the secure password link has been dispatched to the user."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp of request creation."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp of last modification."
+        }
+      },
+      "required": ["email", "fullName", "status", "createdAt", "updatedAt"]
+    },
+    "investment_pod": {
+      "title": "Investment Pod",
+      "description": "Represents a collective investment pod/club with portfolio holdings and trade proposals.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier for the pod." },
+        "name": { "type": "string", "description": "Display name of the pod." },
+        "description": { "type": "string", "description": "Detailed description of the pod's goals." },
+        "focus": { "type": "string", "description": "Target sector focus of the pod." },
+        "membersCount": { "type": "integer", "description": "Current number of members." },
+        "simulatedBalance": { "type": "number", "description": "Available simulated cash balance." },
+        "pnlPercentage": { "type": "number", "description": "Simulated profit and loss percentage." },
+        "isUserMember": { "type": "boolean", "description": "Whether the current user is a member." },
+        "portfolio": { "type": "array", "description": "List of current simulated assets." },
+        "proposals": { "type": "array", "description": "List of active or closed trade proposals." }
+      },
+      "required": ["id", "name", "description", "focus", "membersCount", "simulatedBalance", "pnlPercentage", "portfolio", "proposals"]
+    }
+  },
+  "firestore": {
+    "/vetted_requests/{requestId}": {
+      "schema": "vetted_request",
+      "description": "Collection of secure vetted profile invitation requests."
+    },
+    "/pods/{podId}": {
+      "schema": "investment_pod",
+      "description": "Collection of community investment pods with real-time portfolio tracking and proposals."
+    }
+  }
+}

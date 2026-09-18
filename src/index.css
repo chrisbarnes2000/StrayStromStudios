@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/open-dyslexic');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Overwrite colors to map directly to the Bento Grid theme specifications */
+  --color-slate-950: #0F172A; /* --bg */
+  --color-slate-900: #1E293B; /* --card */
+  --color-slate-800: #334155; /* --border */
+  --color-slate-700: #475569;
+  --color-slate-600: #64748B;
+  --color-slate-500: #64748B;
+  --color-slate-400: #94A3B8; /* --text-s */
+  --color-slate-300: #CBD5E1;
+  --color-slate-200: #E2E8F0;
+  --color-slate-100: #F8FAFC; /* --text-p */
+
+  --color-indigo-950: #0F172A;
+  --color-indigo-900: #1E293B;
+  --color-indigo-800: #334155;
+  --color-indigo-700: #0284C7;
+  --color-indigo-600: #38BDF8; /* --accent */
+  --color-indigo-500: #38BDF8; /* --accent */
+  --color-indigo-400: #38BDF8; /* --accent */
+  --color-indigo-300: #7DD3FC;
+  --color-indigo-200: #BAE6FD;
+  --color-indigo-100: #F0F9FF;
+
+  --color-emerald-400: #10B981; /* --bullish */
+  --color-emerald-500: #10B981; /* --bullish */
+  --color-emerald-600: #059669;
+
+  --color-rose-400: #F43F5E; /* --bearish */
+  --color-rose-500: #F43F5E; /* --bearish */
+  --color-rose-600: #E11D48;
+}
+
+/* Base open dyslexic styling */
+.dyslexic-mode * {
+  font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif !important;
+}
+
+/* Accessibility Theme: High Contrast (Yellow / Black or Stark Dark-on-White/White-on-Black) */
+.high-contrast-mode {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+.high-contrast-mode .text-gray-400,
+.high-contrast-mode .text-gray-500,
+.high-contrast-mode .text-slate-400 {
+  color: #f1f5f9 !important;
+}
+.high-contrast-mode .bg-slate-900,
+.high-contrast-mode .bg-slate-800,
+.high-contrast-mode .bg-slate-950,
+.high-contrast-mode .bg-gray-900,
+.high-contrast-mode .bg-gray-950 {
+  background-color: #121212 !important;
+  border-color: #ffffff !important;
+}
+.high-contrast-mode button,
+.high-contrast-mode a,
+.high-contrast-mode input,
+.high-contrast-mode select,
+.high-contrast-mode textarea {
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+  background-color: #000000 !important;
+}
+.high-contrast-mode button:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Accessibility Theme: Soothing Pastel (Cream background, muted soft rose and sage highlights) */
+.pastel-mode {
+  background-color: #fcf8f2 !important;
+  color: #2c2523 !important;
+}
+.pastel-mode .bg-slate-900,
+.pastel-mode .bg-slate-800,
+.pastel-mode .bg-slate-950,
+.pastel-mode .bg-gray-900,
+.pastel-mode .bg-gray-950 {
+  background-color: #f3eae1 !important;
+  color: #2c2523 !important;
+  border-color: #dcc8b6 !important;
+}
+.pastel-mode .text-white {
+  color: #2c2523 !important;
+}
+.pastel-mode .text-gray-400,
+.pastel-mode .text-slate-400 {
+  color: #5c4e4a !important;
+}
+.pastel-mode button {
+  background-color: #e4d3c5 !important;
+  color: #2c2523 !important;
+  border-color: #dcc8b6 !important;
+}
+.pastel-mode button:hover {
+  background-color: #d7bfad !important;
+}
+.pastel-mode input, .pastel-mode select, .pastel-mode textarea {
+  background-color: #ffffff !important;
+  color: #2c2523 !important;
+  border-color: #dcc8b6 !important;
+}
+
+/* Accessibility Theme: Monochromatic (Strict shades of grey/silver) */
+.monochrome-mode {
+  filter: grayscale(100%) !important;
+}
+
+/* Custom visual polish */
+.glow-green {
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
+}
+.glow-red {
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
+}
+
+/* ==========================================================================
+   BENTO GRID DESIGN THEME OVERRIDES & STYLES
+   ========================================================================== */
+
+/* Bento Grid Layout specific styles */
+.bento-card {
+  background: #1E293B !important;
+  border: 1px solid #334155 !important;
+  border-radius: 16px !important;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.bento-label {
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  color: #94A3B8 !important;
+  text-transform: uppercase !important;
+  margin-bottom: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.bento-stat {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  margin: 4px 0 !important;
+}
+
+.bento-slider-track {
+  height: 4px !important;
+  background: #334155 !important;
+  border-radius: 2px !important;
+  position: relative !important;
+  margin: 12px 0 !important;
+}
+
+.bento-slider-handle {
+  width: 12px !important;
+  height: 12px !important;
+  background: #38BDF8 !important;
+  border-radius: 50% !important;
+  position: absolute !important;
+  top: -4px !important;
+}
+
+.bento-pl-zone {
+  height: 40px !important;
+  border-radius: 8px !important;
+  background: linear-gradient(90deg, #F43F5E 0%, #000 50%, #10B981 100%) !important;
+  margin-top: 12px !important;
+  position: relative !important;
+}
+
+.bento-pl-marker {
+  position: absolute !important;
+  top: -4px !important;
+  width: 2px !important;
+  height: 48px !important;
+  background: #FFF !important;
+  box-shadow: 0 0 8px #FFF !important;
+}
+
+.bento-pod-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-bottom: 12px !important;
+  padding: 8px !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-radius: 8px !important;
+}
+
+.bento-impact-number {
+  font-size: 32px !important;
+  color: #10B981 !important;
+  font-weight: 800 !important;
+  letter-spacing: -1px !important;
+}
+
+.bento-progress-bar {
+  height: 8px !important;
+  background: #334155 !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  margin: 10px 0 !important;
+}
+
+.bento-progress-fill {
+  height: 100% !important;
+  background: #38BDF8 !important;
+}
+
+.bento-table th {
+  text-align: left !important;
+  color: #94A3B8 !important;
+  padding: 8px 0 !important;
+  border-bottom: 1px solid #334155 !important;
+}
+
+.bento-table td {
+  padding: 10px 0 !important;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.5) !important;
+}
+
+.bento-rationale-pill {
+  background: rgba(56, 189, 248, 0.1) !important;
+  color: #38BDF8 !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  font-size: 10px !important;
+  cursor: help !important;
+}
+
+/* Enforce precise background and border colors globally for elements to reflect Bento theme */
+.bg-slate-900, .bg-slate-900\/80, .bg-slate-900\/60 {
+  background-color: #1E293B !important;
+}
+
+.border-slate-800, .border-slate-900 {
+  border-color: #334155 !important;
+}
+
+.bg-slate-950, .bg-slate-950\/90, .bg-slate-950\/80, .bg-slate-950\/60, .bg-slate-950\/50, .bg-slate-950\/40 {
+  background-color: #0F172A !important;
+}
+
+/* Style table rows and tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  color: #94A3B8 !important;
+  border-bottom: 1px solid #334155 !important;
+}
+
+td {
+  border-bottom: 1px solid rgba(51, 65, 85, 0.3) !important;
+}
+
+/* Ensure buttons and elements with indigo backgrounds look like the sky-blue accent */
+.bg-indigo-600, .bg-indigo-500 {
+  background-color: #38BDF8 !important;
+  color: #0F172A !important;
+}
+
+.bg-indigo-600:hover, .bg-indigo-500:hover {
+  background-color: #0EA5E9 !important;
+}
+
+.text-indigo-400, .text-indigo-300 {
+  color: #38BDF8 !important;
+}
+
+/* Custom rounded-2xl should be 16px to align with card spec */
+.rounded-2xl {
+  border-radius: 16px !important;
+}
+
+/* Christopher Barnes's Custom Dyslexia Reading Theme Preference */
+.chris-reading-mode {
+  background-color: #E2F0D9 !important; /* soft light green background */
+  color: #1E293B !important; /* deep slate text for high legibility */
+}
+
+.chris-reading-mode * {
+  font-family: 'Georgia', 'Times New Roman', serif !important;
+}
+
+.chris-reading-mode .bento-card, 
+.chris-reading-mode .bg-slate-900, 
+.chris-reading-mode .bg-slate-900\/80, 
+.chris-reading-mode .bg-slate-900\/60,
+.chris-reading-mode div[class*="bg-slate-900"] {
+  background-color: #F2F8EE !important; /* even softer light green for cards */
+  color: #1E293B !important;
+  border-color: #C5E0B4 !important;
+}
+
+.chris-reading-mode text, 
+.chris-reading-mode span, 
+.chris-reading-mode p, 
+.chris-reading-mode li,
+.chris-reading-mode h1, 
+.chris-reading-mode h2, 
+.chris-reading-mode h3, 
+.chris-reading-mode h4, 
+.chris-reading-mode h5, 
+.chris-reading-mode h6 {
+  color: #1E293B !important;
+}
+
+.chris-reading-mode button {
+  background-color: #A9D18E !important;
+  color: #1E293B !important;
+  border: 1px solid #70AD47 !important;
+}
+
+.chris-reading-mode button:hover {
+  background-color: #89BD6E !important;
+}
+
+.chris-reading-mode input, 
+.chris-reading-mode select, 
+.chris-reading-mode textarea {
+  background-color: #FFFFFF !important;
+  color: #1E293B !important;
+  border: 1px solid #C5E0B4 !important;
+}
+
+.chris-reading-mode .text-slate-400,
+.chris-reading-mode .text-gray-400 {
+  color: #3B5334 !important;
+}
+
+/* ==========================================================================
+   DYNAMIC TEXT ACCESSIBILITY SIZE overrides
+   ========================================================================== */
+.text-size-large,
+.text-size-large * {
+  font-size: 1.05rem !important;
+}
+
+.text-size-large h1,
+.text-size-large h1 * {
+  font-size: 2.15rem !important;
+}
+
+.text-size-large h2,
+.text-size-large h2 * {
+  font-size: 1.65rem !important;
+}
+
+.text-size-large h3,
+.text-size-large h3 * {
+  font-size: 1.35rem !important;
+}
+
+.text-size-large h4,
+.text-size-large h4 * {
+  font-size: 1.15rem !important;
+}
+
+.text-size-large .text-xs,
+.text-size-large .text-xs * {
+  font-size: 0.85rem !important;
+}
+
+.text-size-large .text-sm,
+.text-size-large .text-sm * {
+  font-size: 0.95rem !important;
+}
+
+.text-size-large .text-md,
+.text-size-large .text-md * {
+  font-size: 1.1rem !important;
+}
+
+.text-size-large button,
+.text-size-large button * {
+  font-size: 0.95rem !important;
+}
+
+
+
+
